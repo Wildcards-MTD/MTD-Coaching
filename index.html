@@ -495,6 +495,16 @@ td.ok{color:#49d989;font-weight:700;} td.bad{color:#ff6b7d;font-weight:700;} td.
 .btn{display:inline-block;background:#0033A0;color:#fff;border:none;padding:11px 18px;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px;margin:6px 8px 6px 0;text-decoration:none;}
 .btn.red{background:#E4002B;} .btn:hover{filter:brightness(1.12);}
 pre.email{background:#0f1830;border:1px solid #2a3450;border-radius:8px;padding:16px;white-space:pre-wrap;color:#d7e0f2;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;}
+.emailcard{background:#0f1830;border:1px solid #2a3450;border-radius:10px;padding:22px 26px;max-width:820px;color:#d7e0f2;font:15px/1.65 -apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+.emailcard .em-h{font-size:15px;font-weight:800;color:#fff;margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid #2a3450;letter-spacing:.2px;}
+.emailcard .em-h:first-child{margin-top:0;}
+.emailcard .em-team{font-weight:700;color:#8fb0ff;margin:12px 0 4px;font-size:13.5px;}
+.emailcard .em-p{margin:10px 0;color:#c7d2e8;}
+.emailcard .em-list{margin:6px 0 6px;padding-left:22px;}
+.emailcard .em-list li{margin:6px 0;color:#d1dcf0;}
+.emailcard .em-up{color:#49d989;font-weight:700;}
+.emailcard .em-dn{color:#ff6b7d;font-weight:700;}
+@media print{.emailcard{background:#fff;color:#111;border:1px solid #bbb;}.emailcard .em-h,.emailcard .em-p,.emailcard .em-list li{color:#111;}.emailcard .em-team{color:#0033A0;}}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1e9e5a;color:#fff;padding:12px 20px;border-radius:8px;font-weight:700;opacity:0;transition:.3s;pointer-events:none;} .toast.show{opacity:1;}
 @media print{
  nav,header .tag,.btn,.toast{display:none!important;}
@@ -523,7 +533,7 @@ pre.email{background:#0f1830;border:1px solid #2a3450;border-radius:8px;padding:
 <div class="trend-ctl"><label>Metric:
 <select id="metricSel"><option value="pph">PPH</option><option value="dcr">DCR</option>
 <option value="wo">$ / WO</option><option value="r12pct">Repair-12</option><option value="nps">NPS</option></select></label>
-<span class="mut small">Baseline snapshot — trend fills in as weeks are added.</span></div>
+<span class="mut small">Office metric vs Office Rank across snapshots (lower rank = better).</span></div>
 <div id="trend" style="height:340px;"></div></div>
 <div class="panel"><div class="panel-h">Where the office stands</div>
 <p class="body">Windsor is <b>#31</b> on <b>750</b> jobs. Focus metrics under goal: <b>DCR 89.3%</b>, <b>Attach 32.4%</b>, <b>NPS 91</b>. <b>$/WO $35.09</b>, <b>PPH 5.38</b>, <b>R12 2.8%</b> at/above goal. Versus <b>September 2026 Final</b> we are <b>up 14 spots</b> (from #45). DCR is up 4.2 pts, $/WO down $1.85, NPS down 3.3. R12 held essentially flat. Every delta chip on the other tabs compares to this final.</p></div></section>
@@ -1006,7 +1016,64 @@ pre.email{background:#0f1830;border:1px solid #2a3450;border-radius:8px;padding:
 <a class="btn red" id="openBtn" href="https://mail.google.com/mail/?authuser=Juan.Robles@dish.com&amp;view=cm&amp;fs=1&amp;to=ihsmgmtwindsor@dish.com&amp;su=Windsor%20MTD%20%E2%80%94%20Week%20of%20Oct%2025%20%28Rank%20%2331%29" target="_blank" rel="noopener">✉ Send to IHS Mgmt (Gmail)</a>
 <button class="btn" id="copyBtn">Copy text</button>
 <p class="mut small">Click Send: the email is copied and Gmail opens with the subject prefilled. Press Ctrl+V in the body, then Send. (Body stays out of the URL to avoid a Bad Request.)</p>
-<pre class="email" id="emailBody"></pre></div></section></main>
+<div class="emailcard" id="emailView"><p class="em-p">Hi team,</p>
+<p class="em-p">Here is this week's MTD coaching snapshot (as of 2026-10-25). We're in the back stretch of October with the month about to close. These are close to where we'll land, so the next few days are about protecting what's green and squeezing out the last wins.</p>
+<h3 class="em-h">📊 Where the office stands</h3>
+<p class="em-p">We're at #31 (up 14 spots from #45 at September 2026 Final). Every arrow here and on the dashboard compares to September 2026 Final. DCR is 89.3% (+4.2 pts), $/WO $35.09 (-1.85), PPH 5.38 (-0.07), and NPS 91 (-3.3). The bright spot is R12, clean at 2.8% and essentially flat. DCR climbed the most; $/WO and NPS are the two to protect into month-end.</p>
+<h3 class="em-h">🏆 Wall of Fame</h3>
+<p class="em-p">This week's Wall of Fame goes to the techs hitting the most goals across the board:</p>
+<ul class="em-list">
+<li><b>Jitov, Nikolay (Jose Echevarria-Roman):</b> 6.62 PPH, $107.37/WO, DCR 96.5%, NPS 100. Hitting 7/7 goals (PPH, $/WO, DCR, R12, NPS).</li>
+<li><b>Taylor-Ramirez, Guillermo (Jose Echevarria-Roman):</b> 5.01 PPH, $52.09/WO, DCR 98.0%, NPS 91. Hitting 6/7 goals (PPH, $/WO, DCR, R12).</li>
+<li><b>Mosca, Anthony (Shormin Ahmed):</b> 6.03 PPH, $41.64/WO, DCR 90.7%, NPS 80. Hitting 6/7 goals (PPH, $/WO, DCR, R12).</li>
+<li><b>Illas, Omar (Shormin Ahmed):</b> 6.52 PPH, $56.95/WO, DCR 90.5%, NPS 92. Hitting 6/7 goals (PPH, $/WO, DCR, R12).</li>
+<li><b>Hatungimana, Issa T (Jose Echevarria-Roman):</b> 5.01 PPH, $30.89/WO, DCR 85.5%, NPS 100. Hitting 5/7 goals (PPH, R12, NPS).</li>
+</ul>
+<h3 class="em-h">🚀 Most Improved</h3>
+<p class="em-p">Gains vs September 2026 Final — top movers per team:</p>
+<div class="em-team">Shormin Ahmed</div>
+<ul class="em-list">
+<li><b>Altadonna, Brian improved 5 of 5:</b> PPH <span class="em-up">+0.29</span>, $/WO <span class="em-up">+$2.72</span>, DCR <span class="em-up">+8.4%</span>, R12 <span class="em-dn">-2.0%</span>.</li>
+<li>Green, Geremias (Jerry) improved 4 of 5: $/WO <span class="em-up">+$0.19</span>, DCR <span class="em-up">+2.6%</span>, NPS <span class="em-up">+40.0.</span> Keep an eye on PPH <span class="em-dn">-0.04</span>, R12 <span class="em-up">+3.9%</span>.</li>
+<li><b>Mosca, Anthony improved 4 of 5:</b> $/WO <span class="em-up">+$8.16</span>, DCR <span class="em-up">+3.8%</span>, R12 <span class="em-dn">-2.6%</span>. Keep an eye on PPH <span class="em-dn">-0.11</span>, NPS <span class="em-dn">-20.0.</span></li>
+</ul>
+<div class="em-team">Jose Echevarria-Roman</div>
+<ul class="em-list">
+<li><b>Perkins, Derek improved 5 of 5:</b> PPH <span class="em-up">+1.12</span>, DCR <span class="em-up">+13.3%</span>, R12 <span class="em-dn">-6.5%</span>, NPS <span class="em-up">+60.0.</span> Keep an eye on $/WO <span class="em-dn">-$52.99.</span></li>
+<li><b>Hatungimana, Issa T improved 4 of 5:</b> $/WO <span class="em-up">+$4.48</span>, DCR <span class="em-up">+1.1%</span>, R12 <span class="em-dn">-1.6%</span>. Keep an eye on PPH <span class="em-dn">-0.67.</span></li>
+<li><b>Taylor-Ramirez, Guillermo improved 4 of 5:</b> $/WO <span class="em-up">+$16.43</span>, DCR <span class="em-up">+10.5%</span>, R12 <span class="em-dn">-1.8%</span>. Keep an eye on PPH <span class="em-dn">-0.33</span>, NPS <span class="em-dn">-9.1.</span></li>
+</ul>
+<h3 class="em-h">🎯 Coaching Targets</h3>
+<div class="em-team">Shormin Ahmed</div>
+<ul class="em-list">
+<li><b>PPH:</b> Chesson, Josiah at 3.99 vs the &gt;5.0 goal. Coach 2b pre-call + tight routing — cut idle/windshield time to lift PPH.</li>
+<li><b>$/WO:</b> Rose, Walton at $<span class="em-dn">-31.25</span> vs the $35 goal. Coach 3a get the demo bag in the home — physical demo drives attach &amp; revenue/job.</li>
+<li><b>DCR:</b> Chesson, Josiah at 72.7% vs the 90% goal. Coach 4b early LOS check — catch line-of-sight issues before a cancel.</li>
+<li><b>R12:</b> Velez, Gabriel at 12.0% vs the &lt;5% goal. Coach 7c peak + verify signal before leaving — verify at the tap so it doesn't repeat.</li>
+<li><b>NPS:</b> Phillips, Dale E at 71 vs the 95 goal. Coach 6a set expectations + 6b educate at close — surveys swing on comms &amp; closing walk.</li>
+</ul>
+<div class="em-team">Jose Echevarria-Roman</div>
+<ul class="em-list">
+<li><b>$/WO:</b> Montano Jr, Daniel at $6.25 vs the $35 goal. Coach 3a get the demo bag in the home — physical demo drives attach &amp; revenue/job.</li>
+<li><b>DCR:</b> Berardi, Michael A at 83.7% vs the 90% goal. Coach 4b early LOS check — catch line-of-sight issues before a cancel.</li>
+<li><b>R12:</b> Rodriguez, Jose at 7.1% vs the &lt;5% goal. Coach 7c peak + verify signal before leaving — verify at the tap so it doesn't repeat.</li>
+<li><b>NPS:</b> Rodriguez, Jose at 71 vs the 95 goal. Coach 6a set expectations + 6b educate at close — surveys swing on comms &amp; closing walk.</li>
+</ul>
+<h3 class="em-h">💬 This Week's 3 Conversations</h3>
+<div class="em-team">Shormin Ahmed</div>
+<ul class="em-list">
+<li><b>Velez, Gabriel ($/WO, Customer-needs conversation):</b> The habit to build is offering a solution on every job: $8.64/WO across 25 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: <span class="em-up">+$659</span> ≈ 25 jobs — a growth goal, not a quota.</li>
+<li>Green, Geremias (Jerry) ($/WO, Customer-needs conversation): The habit to build is offering a solution on every job: $33.00/WO across 51 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: <span class="em-up">+$102</span> ≈ 51 jobs — a growth goal, not a quota.</li>
+<li><b>Phillips, Dale E (NPS, Customer-experience habits):</b> The behavior behind the score is the customer interaction itself. NPS 71 on 7 surveys. Coach the rapport and customer-education steps and recognize their strength (5.57 PPH). Target: ≥95 NPS by making each visit a promoter experience (9–10).</li>
+</ul>
+<div class="em-team">Jose Echevarria-Roman</div>
+<ul class="em-list">
+<li><b>Rodriguez, Jose (NPS, Customer-experience habits):</b> The behavior behind the score is the customer interaction itself. NPS 71 on 7 surveys. Coach the rapport and customer-education steps and recognize their strength (5.78 PPH). Target: ≥95 NPS by making each visit a promoter experience (9–10).</li>
+<li><b>Gallardo, Joel ($/WO, Customer-needs conversation):</b> The habit to build is offering a solution on every job: $11.89/WO across 78 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: <span class="em-up">+$1</span>,803 ≈ 78 jobs — a growth goal, not a quota.</li>
+<li><b>Montano Jr, Daniel ($/WO, Customer-needs conversation):</b> The habit to build is offering a solution on every job: $6.25/WO across 45 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: <span class="em-up">+$1</span>,294 ≈ 45 jobs — a growth goal, not a quota.</li>
+</ul>
+<p class="em-p mut small">Dashboard: https://github.com/Wildcards-MTD/MTD-Coaching.git  (replace with your GitHub Pages URL; delete this line until then)</p>
+<p class="em-p">— Juan</p></div></div></section></main>
 <div class="toast" id="toast">Copied!</div>
 <script>
 const TABS=[["overview", "Overview"], ["actions", "Action Plan"], ["briefs", "Print Briefs"], ["teams", "Team Scorecards"], ["improved", "Most Improved"], ["focus", "Coaching Targets"], ["path", "Path to Goal"], ["root", "Root Cause"], ["hours", "Hours & Starlink"], ["peers", "Peer Comparison"], ["fame", "Wall of Fame"], ["bonus", "Bonus & Promotion"], ["convos", "3 Conversations"], ["email", "Email"]];
@@ -1016,22 +1083,31 @@ b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.re
 document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');
 if(id==='overview')setTimeout(drawTrend,30);};nav.appendChild(b);});
 const EMAIL="Hi team,\n\nHere is this week's MTD coaching snapshot (as of 2026-10-25). We're in the back stretch of October with the month about to close. These are close to where we'll land, so the next few days are about protecting what's green and squeezing out the last wins.\n\n== Where the office stands ==\nWe're at #31 (up 14 spots from #45 at September 2026 Final). Every arrow here and on the dashboard compares to September 2026 Final. DCR is 89.3% (+4.2 pts), $/WO $35.09 (-1.85), PPH 5.38 (-0.07), and NPS 91 (-3.3). The bright spot is R12, clean at 2.8% and essentially flat. DCR climbed the most; $/WO and NPS are the two to protect into month-end.\n\n== Wall of Fame ==\nThis week's Wall of Fame goes to the techs hitting the most goals across the board:\n  1. Jitov, Nikolay (Jose Echevarria-Roman): 6.62 PPH, $107.37/WO, DCR 96.5%, NPS 100. Hitting 7/7 goals (PPH, $/WO, DCR, R12, NPS).\n  2. Taylor-Ramirez, Guillermo (Jose Echevarria-Roman): 5.01 PPH, $52.09/WO, DCR 98.0%, NPS 91. Hitting 6/7 goals (PPH, $/WO, DCR, R12).\n  3. Mosca, Anthony (Shormin Ahmed): 6.03 PPH, $41.64/WO, DCR 90.7%, NPS 80. Hitting 6/7 goals (PPH, $/WO, DCR, R12).\n  4. Illas, Omar (Shormin Ahmed): 6.52 PPH, $56.95/WO, DCR 90.5%, NPS 92. Hitting 6/7 goals (PPH, $/WO, DCR, R12).\n  5. Hatungimana, Issa T (Jose Echevarria-Roman): 5.01 PPH, $30.89/WO, DCR 85.5%, NPS 100. Hitting 5/7 goals (PPH, R12, NPS).\n\n== Most Improved ==\nGains vs September 2026 Final \u2014 top movers per team:\nShormin Ahmed\n  \u2022 Altadonna, Brian improved 5 of 5: PPH +0.29, $/WO +$2.72, DCR +8.4%, R12 -2.0%.\n  \u2022 Green, Geremias (Jerry) improved 4 of 5: $/WO +$0.19, DCR +2.6%, NPS +40.0. Keep an eye on PPH -0.04, R12 +3.9%.\n  \u2022 Mosca, Anthony improved 4 of 5: $/WO +$8.16, DCR +3.8%, R12 -2.6%. Keep an eye on PPH -0.11, NPS -20.0.\nJose Echevarria-Roman\n  \u2022 Perkins, Derek improved 5 of 5: PPH +1.12, DCR +13.3%, R12 -6.5%, NPS +60.0. Keep an eye on $/WO -$52.99.\n  \u2022 Hatungimana, Issa T improved 4 of 5: $/WO +$4.48, DCR +1.1%, R12 -1.6%. Keep an eye on PPH -0.67.\n  \u2022 Taylor-Ramirez, Guillermo improved 4 of 5: $/WO +$16.43, DCR +10.5%, R12 -1.8%. Keep an eye on PPH -0.33, NPS -9.1.\n\n== Coaching Targets ==\nShormin Ahmed\n  \u2022 PPH: Chesson, Josiah at 3.99 vs the >5.0 goal. Coach 2b pre-call + tight routing \u2014 cut idle/windshield time to lift PPH.\n  \u2022 $/WO: Rose, Walton at $-31.25 vs the $35 goal. Coach 3a get the demo bag in the home \u2014 physical demo drives attach & revenue/job.\n  \u2022 DCR: Chesson, Josiah at 72.7% vs the 90% goal. Coach 4b early LOS check \u2014 catch line-of-sight issues before a cancel.\n  \u2022 R12: Velez, Gabriel at 12.0% vs the <5% goal. Coach 7c peak + verify signal before leaving \u2014 verify at the tap so it doesn't repeat.\n  \u2022 NPS: Phillips, Dale E at 71 vs the 95 goal. Coach 6a set expectations + 6b educate at close \u2014 surveys swing on comms & closing walk.\nJose Echevarria-Roman\n  \u2022 $/WO: Montano Jr, Daniel at $6.25 vs the $35 goal. Coach 3a get the demo bag in the home \u2014 physical demo drives attach & revenue/job.\n  \u2022 DCR: Berardi, Michael A at 83.7% vs the 90% goal. Coach 4b early LOS check \u2014 catch line-of-sight issues before a cancel.\n  \u2022 R12: Rodriguez, Jose at 7.1% vs the <5% goal. Coach 7c peak + verify signal before leaving \u2014 verify at the tap so it doesn't repeat.\n  \u2022 NPS: Rodriguez, Jose at 71 vs the 95 goal. Coach 6a set expectations + 6b educate at close \u2014 surveys swing on comms & closing walk.\n\n== This Week's 3 Conversations ==\nShormin Ahmed\n  1. Velez, Gabriel ($/WO, Customer-needs conversation): The habit to build is offering a solution on every job: $8.64/WO across 25 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: +$659 \u2248 25 jobs \u2014 a growth goal, not a quota.\n  2. Green, Geremias (Jerry) ($/WO, Customer-needs conversation): The habit to build is offering a solution on every job: $33.00/WO across 51 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: +$102 \u2248 51 jobs \u2014 a growth goal, not a quota.\n  3. Phillips, Dale E (NPS, Customer-experience habits): The behavior behind the score is the customer interaction itself. NPS 71 on 7 surveys. Coach the rapport and customer-education steps and recognize their strength (5.57 PPH). Target: \u226595 NPS by making each visit a promoter experience (9\u201310).\nJose Echevarria-Roman\n  1. Rodriguez, Jose (NPS, Customer-experience habits): The behavior behind the score is the customer interaction itself. NPS 71 on 7 surveys. Coach the rapport and customer-education steps and recognize their strength (5.78 PPH). Target: \u226595 NPS by making each visit a promoter experience (9\u201310).\n  2. Gallardo, Joel ($/WO, Customer-needs conversation): The habit to build is offering a solution on every job: $11.89/WO across 78 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: +$1,803 \u2248 78 jobs \u2014 a growth goal, not a quota.\n  3. Montano Jr, Daniel ($/WO, Customer-needs conversation): The habit to build is offering a solution on every job: $6.25/WO across 45 eligible jobs. Coach the needs-assessment and demo-bag-in-home routine; pair it with what's working (100 NPS). Target: +$1,294 \u2248 45 jobs \u2014 a growth goal, not a quota.\n\nDashboard: https://github.com/Wildcards-MTD/MTD-Coaching.git  (replace with your GitHub Pages URL; delete this line until then)\n\n\u2014 Juan";
-document.getElementById('emailBody').textContent=EMAIL;
 function copyEmail(){navigator.clipboard.writeText(EMAIL).then(()=>{const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400);});}
 document.getElementById('copyBtn').onclick=copyEmail;
 document.getElementById('openBtn').onclick=()=>copyEmail();
-const TD={"pph": 5.38, "dcr": 89.32, "wo": 35.09, "r12pct": 2.835820896, "nps": 91.0, "rank": 31, "goals": {"pph": 5.0, "dcr": 90, "wo": 35, "r12pct": 5, "nps": 95}};
+const TD={"series": [{"label": "September 2026 Final", "rank": 45, "pph": 5.45, "dcr": 85.09, "wo": 36.94, "r12pct": 2.842, "nps": 94.26}, {"label": "Week of 10/5", "rank": 31, "pph": 5.46, "dcr": 92.65, "wo": 29.31, "r12pct": 3.478, "nps": 93.44}, {"label": "Week of 10/12", "rank": 44, "pph": 5.36, "dcr": 90.27, "wo": 34.09, "r12pct": 3.036, "nps": 90.59}, {"label": "Week of 10/19", "rank": 26, "pph": 5.37, "dcr": 90.13, "wo": 34.03, "r12pct": 2.773, "nps": 90.43}, {"label": "Week of 10/25", "rank": 31, "pph": 5.38, "dcr": 89.32, "wo": 35.09, "r12pct": 2.836, "nps": 91.0}], "goals": {"pph": 5.0, "dcr": 90, "wo": 35, "r12pct": 5, "nps": 95}};
 function drawTrend(){const sel=document.getElementById('metricSel');const m=sel?sel.value:'pph';
 const labels={pph:'PPH',dcr:'DCR %',wo:'$/WO',r12pct:'Repair-12 %',nps:'NPS'};
-const val=TD[m],goal=TD.goals[m],rev=(m==='r12pct');
-const lo=Math.min(val,goal),hi=Math.max(val,goal),pad=(hi-lo)*0.6||hi*0.15||1;
-Highcharts.chart('trend',{chart:{backgroundColor:'transparent'},title:{text:null},credits:{enabled:false},legend:{itemStyle:{color:'#9fb0cf'}},
-xAxis:{categories:['Week of Oct 25, 2026'],labels:{style:{color:'#9fb0cf'}},lineColor:'#2a3450'},
+const S=TD.series,goal=TD.goals[m],rev=(m==='r12pct');
+const cats=S.map(p=>p.label);
+const vals=S.map(p=>p[m]);
+const ranks=S.map(p=>p.rank);
+// per-point color: green if hits goal (r12 lower-is-better), red if misses
+const bars=S.map(p=>{const v=p[m];const hit=(m==='r12pct')?(v<goal):(m==='pph'?(v>goal):(v>=goal));
+  return {y:v,color:hit?'#1e9e5a':'#d23b4e'};});
+const allv=vals.concat([goal]);
+const lo=Math.min.apply(null,allv),hi=Math.max.apply(null,allv),pad=(hi-lo)*0.25||hi*0.1||1;
+Highcharts.chart('trend',{chart:{backgroundColor:'transparent'},title:{text:null},credits:{enabled:false},
+legend:{itemStyle:{color:'#9fb0cf'}},
+xAxis:{categories:cats,labels:{style:{color:'#9fb0cf'}},lineColor:'#2a3450'},
 yAxis:[{title:{text:labels[m],style:{color:'#9fb0cf'}},labels:{style:{color:'#9fb0cf'}},gridLineColor:'#1a2133',min:lo-pad,max:hi+pad,reversed:rev,
 plotLines:[{value:goal,color:'#E4002B',dashStyle:'Dash',width:2,label:{text:'Goal '+goal,style:{color:'#ff6b7d'}},zIndex:5}]},
-{title:{text:'Office Rank',style:{color:'#9fb0cf'}},opposite:true,reversed:true,labels:{style:{color:'#9fb0cf'}}}],
-series:[{name:labels[m],data:[val],color:'#0033A0',type:'column',yAxis:0,pointWidth:60},
-{name:'Office Rank',data:[TD.rank],color:'#E4002B',type:'spline',yAxis:1,marker:{enabled:true,radius:5}}]});}
+{title:{text:'Office Rank',style:{color:'#9fb0cf'}},opposite:true,reversed:true,labels:{style:{color:'#9fb0cf'}},gridLineWidth:0}],
+series:[{name:labels[m],data:bars,type:'column',yAxis:0,borderWidth:0,
+  dataLabels:{enabled:true,style:{color:'#e8edf7',textOutline:'none'},format:(m==='wo'?'${point.y:.2f}':(m==='dcr'||m==='r12pct'?'{point.y:.1f}':'{point.y:.2f}'))}},
+{name:'Office Rank',data:ranks,color:'#E4002B',type:'spline',yAxis:1,marker:{enabled:true,radius:4},
+  dataLabels:{enabled:true,style:{color:'#ff9fb0',textOutline:'none'},format:'#{point.y}'}}]});}
 document.addEventListener('change',e=>{if(e.target.id==='metricSel')drawTrend();});
 drawTrend();
 </script></body></html>
