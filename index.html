@@ -935,18 +935,18 @@ function draw(){const [Y,M]=mon.value.split('-').map(Number);cal.innerHTML='';
 function upd(){go.disabled=!(who.value&&pick.size);sw.disabled=!(who.value&&off.value&&on.value);}
 who.onchange=upd;mon.onchange=draw;off.onchange=upd;on.onchange=upd;
 function show(el,ok,t){el.className='xd-msg '+(ok?'xd-ok':'xd-err');el.style.display='block';el.textContent=t;}
-async function post(body){await fetch(XD_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});}
+async function post(body){const q=new URLSearchParams();Object.entries(body).forEach(([k,v])=>q.set(k,Array.isArray(v)?v.join(','):v));const w=window.open(XD_URL+'?'+q.toString(),'_blank');if(!w)throw new Error('blocked');}
 const nm=k=>D.tech[k]?D.tech[k].name:k;
 const fmt=s=>new Date(s+'T12:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
 go.onclick=async()=>{const ds=[...pick].sort();go.disabled=true;go.textContent='Sending...';
  try{await post({type:'signup',tech:nm(who.value),fsm:XD_FSM[who.value]||'',dates:ds});
-  show(msg,true,`Thanks! You signed up for ${ds.map(fmt).join(', ')}. Every extra day helps us finish strong!`);pick.clear();draw();}
- catch(e){show(msg,false,'That didn\u2019t go through. Check your connection and try again.');}
+  show(msg,true,`A new tab opened to send your days (${ds.map(fmt).join(', ')}). Sign in with your DISH Google account if asked.`);pick.clear();draw();}
+ catch(e){show(msg,false,'Your browser blocked the new tab. Allow pop-ups for this page and try again.');}
  go.textContent='Submit my days';upd();};
 sw.onclick=async()=>{sw.disabled=true;sw.textContent='Sending...';
  try{await post({type:'swap',tech:nm(who.value),fsm:XD_FSM[who.value]||'',off:off.value,on:on.value});
-  show(swm,true,`Swap request sent: off ${fmt(off.value)}, working ${fmt(on.value)}. Leadership will review it.`);off.value='';on.value='';}
- catch(e){show(swm,false,'That didn\u2019t go through. Check your connection and try again.');}
+  show(swm,true,`A new tab opened to send your swap (off ${fmt(off.value)}, working ${fmt(on.value)}). Sign in with your DISH Google account if asked.`);off.value='';on.value='';}
+ catch(e){show(swm,false,'Your browser blocked the new tab. Allow pop-ups for this page and try again.');}
  sw.textContent='Send swap request';upd();};
 draw();
 })();
